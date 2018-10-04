@@ -42,11 +42,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get the day started with a workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlm-vq-Qvl">
                                         <rect key="frame" x="36" y="66" width="303" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2179883329" green="0.1018502972" blue="0.96081537009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.29407350334598087" green="0.40951300701327215" blue="0.97874768873570495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9Bl-GV-jh8" firstAttribute="centerX" secondItem="etS-Yd-zjh" secondAttribute="centerX" id="18i-7k-rlC"/>
                                     <constraint firstAttribute="height" constant="100" id="2U3-iq-970"/>
