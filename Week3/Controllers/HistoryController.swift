@@ -45,6 +45,7 @@ class HistoryController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(WorkoutCell.instanceFromNib(), forCellReuseIdentifier: WorkoutCell.cellID)
+        tableView.tableFooterView = UIView()
     }
 
     @objc func handleStartWorkoutButton() {
