@@ -36,7 +36,7 @@ class Workout: Codable {
         name = try container.decode(String.self, forKey: .name)
         exercises = try container.decode([Exercise].self, forKey: .exercises)
         startTime = try container.decode(Date.self, forKey: .startTime)
-        endTime = try container.decode(Date.self, forKey: .endTime)
+        endTime = try container.decode(Date?.self, forKey: .endTime)
     }
 
 

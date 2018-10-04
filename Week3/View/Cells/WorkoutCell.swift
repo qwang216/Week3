@@ -10,7 +10,7 @@ import UIKit
 
 class WorkoutCell: UITableViewCell {
     static let cellID = "WorkoutCellID"
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
     let flowLayout = UICollectionViewFlowLayout()
     var workoutHistoryViewModel: WorkoutHistoryViewModel?
 
@@ -27,9 +27,9 @@ class WorkoutCell: UITableViewCell {
     }
 
     func setupCollectionView() {
-        flowLayout.estimatedItemSize = CGSize(width: 200, height: 200)
+        flowLayout.estimatedItemSize = CGSize(width: 180, height: 180)
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 180, height: 180)
+        flowLayout.itemSize = CGSize(width: 200, height: 200)
         collectionView.collectionViewLayout = flowLayout
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -46,8 +46,9 @@ extension WorkoutCell: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExerciseCell.cellID, for: indexPath) as! ExerciseCell
-        let currentExercise = workoutHistoryViewModel?.exerciseViewModels.value[indexPath.item].exercise.value
-            cell.set(currentExercise!)
+        if let currentExercise = workoutHistoryViewModel?.exerciseViewModels.value[indexPath.item].exercise.value {
+            cell.set(currentExercise)
+        }
         return cell
     }
 

@@ -10,19 +10,24 @@ import Foundation
 
 class WorkoutService {
 
-    private var userDefaults = UserDefaults.standard
-
     func saveWorkouts(_ workouts: [Workout]) {
         let encoder = JSONEncoder()
-        let mockData = MockData.generateWorkoutDate()
-        if let encoded = try? encoder.encode(mockData) {
-            userDefaults.set(encoded, forKey: "workouts")
-            userDefaults.synchronize()
+        if let encoded = try? encoder.encode(workouts) {
+            UserDefaults.standard.set(encoded, forKey: "workouts")
+            UserDefaults.standard.synchronize()
         }
     }
 
     func getWorkouts() -> [Workout] {
-        let workouts = userDefaults.object(forKey: "workouts") as? [Workout] ?? [Workout]()
-        return workouts
+        
+        if let workoutData = UserDefaults.standard.data(forKey: "workouts") {
+            do {
+                let workouts = try JSONDecoder().decode([Workout].self, from: workoutData)
+                return workouts
+            } catch {
+                print(error)
+            }
+        }
+        return [Workout]()
     }
 }

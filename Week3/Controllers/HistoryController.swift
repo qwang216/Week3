@@ -28,8 +28,7 @@ class HistoryController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-//        historyViewModel = HistoryViewModel(workouts: WorkoutService().getWorkouts(), message: "Hellow World")
-//        tableView.reloadData()
+        historyViewModel?.refreshData()
     }
 
     func setupViewModelBindProperty() {

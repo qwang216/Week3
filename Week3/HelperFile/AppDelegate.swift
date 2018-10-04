@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainNavController = sb.instantiateViewController(withIdentifier: MainNavigationController.storyboardID) as! MainNavigationController
         let historyController = mainNavController.viewControllers.first as! HistoryController
         // TODO: grab data from persistence layer
-        
-        let historyViewModel = HistoryViewModel(workouts: WorkoutService().getWorkouts(), message: "Let's the the party started!")
+        let userDefaultData = WorkoutService().getWorkouts()
+        let mockData = MockData.generateWorkoutDate()
+        let historyViewModel = HistoryViewModel(workouts: userDefaultData, message: "Let's the the party started!")
         historyController.historyViewModel = historyViewModel
         window?.rootViewController = mainNavController
 

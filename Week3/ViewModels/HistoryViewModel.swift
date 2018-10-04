@@ -22,4 +22,8 @@ class HistoryViewModel {
         // if today has workout already append excercise in workoutViewModel
         // otherwise create a new workoutViewModel
     }
+    func refreshData() {
+        let workouts = WorkoutService().getWorkouts()
+        self.workouts.value = workouts.map(WorkoutHistoryViewModel.init)
+    }
 }
