@@ -41,6 +41,7 @@ class HistoryController: UIViewController {
     }
 
     func setupTableView() {
+        tableView.backgroundColor = .purple
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(WorkoutCell.instanceFromNib(), forCellReuseIdentifier: WorkoutCell.cellID)
@@ -78,7 +79,7 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
         let headerView = HistorySectionHeaderView.initializeViewFromNib()
         let workout = historyViewModel?.workouts.value[section]
         headerView.dateLabel.text = workout?.dateString.value
-        headerView.workoutTitleLabel.text = workout?.nameString.value
+        headerView.workoutTitleLabel.text = (workout?.nameString.value ?? "") + " Exercise"
 
         return headerView
     }

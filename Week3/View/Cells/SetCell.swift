@@ -50,6 +50,7 @@ class SetCell: UITableViewCell {
         setLabel.text = "\(set.set)"
         weightTextField.placeholder = "\(set.weight)"
         repetitionTextField.placeholder = "\(set.repetition)"
+
         updateSet = set
     }
 

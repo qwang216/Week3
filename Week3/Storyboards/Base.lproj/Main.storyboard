@@ -32,7 +32,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etS-Yd-zjh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Bl-GV-jh8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="9Bl-GV-jh8">
                                         <rect key="frame" x="162.5" y="8" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ta1-E0-cHW"/>
@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.2179883329" green="0.1018502972" blue="0.96081537009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9Bl-GV-jh8" firstAttribute="centerX" secondItem="etS-Yd-zjh" secondAttribute="centerX" id="18i-7k-rlC"/>
                                     <constraint firstAttribute="height" constant="100" id="2U3-iq-970"/>
@@ -145,8 +145,12 @@
                         <viewLayoutGuide key="safeArea" id="jRD-Rl-7WU"/>
                     </view>
                     <navigationItem key="navigationItem" title="00:00:00" id="oSc-5W-a4k">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Q5i-v4-2Oz"/>
-                        <barButtonItem key="rightBarButtonItem" title="Finish" id="Cik-Lh-554"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Q5i-v4-2Oz">
+                            <color key="tintColor" red="1" green="0.1043915102" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Finish" id="Cik-Lh-554">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addExerciseButton" destination="QCZ-Vd-MHD" id="PPT-Hz-L0Q"/>
@@ -179,4 +183,7 @@
             <point key="canvasLocation" x="284" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon" width="1024" height="1024"/>
+    </resources>
 </document>

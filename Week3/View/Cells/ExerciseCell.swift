@@ -18,6 +18,7 @@ class ExerciseCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundColor = .purple
         resetLabelText()
     }
 

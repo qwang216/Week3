@@ -13,7 +13,7 @@ class HistoryViewModel {
     var message: Obserable<String>
 
     init(workouts: [Workout], message: String) {
-        let workoutViewModels = workouts.map( WorkoutHistoryViewModel.init )
+        let workoutViewModels = workouts.sorted{ $0.startTime > $1.startTime }.map(WorkoutHistoryViewModel.init)
         self.workouts = Obserable<[WorkoutHistoryViewModel]>(workoutViewModels)
         self.message = Obserable<String>(message)
     }
@@ -24,6 +24,6 @@ class HistoryViewModel {
     }
     func refreshData() {
         let workouts = WorkoutService().getWorkouts()
-        self.workouts.value = workouts.map(WorkoutHistoryViewModel.init)
+        self.workouts.value = workouts.sorted{ $0.startTime > $1.startTime }.map(WorkoutHistoryViewModel.init)
     }
 }

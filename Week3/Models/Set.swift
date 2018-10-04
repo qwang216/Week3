@@ -13,8 +13,12 @@ class Set: Codable {
     let set: Int
     var weight: Double
     var repetition: Int
-    var oneRepetitionMax: Double {
-        return repetition > 1 ? weight * (1 + (Double(repetition / 30))) : weight
+    var oneRepetitionMax: String {
+        if repetition > 1 {
+            return (weight * (1 + Double(repetition) / 30.0)).formatNumberToStringAndRoundTo(0)
+        } else {
+            return weight.formatNumberToStringAndRoundTo(1)
+        }
     }
 
     init(set: Int, id: Int, weight: Double = 0, repetition: Int = 0) {

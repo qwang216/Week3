@@ -30,6 +30,10 @@ class WorkoutController: UIViewController {
         finishBarButton.addTarget(target: self, action: #selector(handleFinishButton))
         addExerciseButton.addTarget(self, action: #selector(handleAddExerciseButton), for: .touchUpInside)
         navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.barTintColor = UIColor(red: 80/255, green: 197/255, blue: 89/255, alpha: 1)
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         viewModelBinding()
         addNotificationObserver()
     }

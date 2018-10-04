@@ -54,7 +54,7 @@ class WorkoutViewModel {
 
     @objc func addNewExercise(notification: Notification) {
         if let exercise = notification.userInfo?["exerciseObject"] as? Exercise {
-            exercises.value.append(ExerciseViewModel(exercise))
+            exercises.value.insert(ExerciseViewModel(exercise), at: 0)
             exercises.value = exercises.value
         }
     }
